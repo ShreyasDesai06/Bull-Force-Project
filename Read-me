@@ -1,0 +1,70 @@
+Bull Force OTP Verification Project
+
+This project implements a simple OTP-based login and verification system using Node.js, Express, and Nodemailer. Users enter their email to receive an OTP, which they then verify on the same page. A success or failure message is displayed based on the OTP validation.
+
+Features
+
+Email-based OTP Verification: Users receive a one-time password (OTP) via email to verify their identity.
+Error Handling: The app handles errors in sending OTPs and displays appropriate messages.
+OTP Expiration: OTPs expire after 5 minutes, ensuring security.
+
+Technologies Used
+
+Node.js: Backend JavaScript runtime.
+Express: Web framework for handling routes.
+Nodemailer: Library for sending emails.
+HTML: Basic HTML used within JavaScript for rendering forms and messages.
+
+Installation
+
+Clone the repository:
+
+bash
+Copy code
+git clone https://github.com/yourusername/bull-force-otp-project.git
+
+Navigate to the project directory:
+
+bash
+Copy code
+cd bull-force-otp-project
+
+Install the required dependencies:
+
+bash
+Copy code
+npm install
+
+Set Up Credentials: Replace the placeholder credentials in app.js with your email and password for sending OTPs:
+
+javascript
+Copy code
+
+const EMAIL = 'your-email@gmail.com';
+const EMAIL_PASSWORD = 'your-email-password';
+
+Note: This project demonstrates OTP verification without an .env file. Avoid using this approach in production as it may expose sensitive information.
+
+Start the server:
+
+bash
+Copy code
+
+node app.js
+Open your browser and go to http://localhost:3000 to use the app.
+
+Project Structure
+bash
+Copy code
+bull-force-otp-project
+├── app.js             # Main server file
+└── package.json       # Project configuration and dependencies
+
+How It Works
+
+Enter Email: Users enter their email on the homepage.
+Send OTP: A 6-digit OTP is generated and sent to the user's email using Nodemailer.
+Verify OTP: The user enters the OTP on a verification page.
+Validation:
+If the OTP matches and is entered within 5 minutes, a success message is shown.
+If the OTP is incorrect or expired, a failure message is displayed.
